@@ -1,0 +1,109 @@
+/* ===== DESIGN SYSTEM — HRFlow ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Dark Mode (default) ── */
+:root {
+  --bg0: #0A0A0F;
+  --bg1: #111118;
+  --bg2: #1A1A26;
+  --bg3: #22223A;
+  --accent: #6C5CE7;
+  --accent2: #A29BFE;
+  --green: #00B894;
+  --amber: #FDCB6E;
+  --red: #E17055;
+  --text: #FAFAFA;
+  --muted: #8888AA;
+  --border: rgba(255, 255, 255, 0.08);
+  --card: rgba(255, 255, 255, 0.04);
+  --input: rgba(255, 255, 255, 0.06);
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+}
+
+/* ── Light Mode ── */
+[data-theme="light"] {
+  --bg0: #F0EFF8;
+  --bg1: #FFFFFF;
+  --bg2: #F5F4FC;
+  --bg3: #E8E7F5;
+  --text: #1A1A2E;
+  --muted: #6B6B8A;
+  --border: rgba(0, 0, 0, 0.1);
+  --card: rgba(255, 255, 255, 0.8);
+  --input: rgba(0, 0, 0, 0.05);
+  --shadow: 0 4px 24px rgba(108, 92, 231, 0.12);
+}
+
+/* ── Base ── */
+html, body, #root {
+  height: 100%;
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg0);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ── Typography ── */
+h1, h2, h3, .font-display {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--bg3); border-radius: 2px; }
+
+/* ── Focus rings ── */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ── Utility classes ── */
+.sr-only {
+  position: absolute; width: 1px; height: 1px;
+  padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border-width: 0;
+}
+
+.text-muted { color: var(--muted); }
+.text-accent { color: var(--accent2); }
+.text-green { color: var(--green); }
+.text-red { color: var(--red); }
+.text-amber { color: var(--amber); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+}
+
+.badge-new    { background: rgba(162,155,254,.15); color: var(--accent2); }
+.badge-rev    { background: rgba(253,203,110,.12); color: var(--amber); }
+.badge-int    { background: rgba(0,184,148,.12); color: var(--green); }
+.badge-rej    { background: rgba(225,112,85,.12); color: var(--red); }
+.badge-hired  { background: rgba(0,184,148,.2); color: var(--green); }
+
+.score-high { background: rgba(0,184,148,.15); color: var(--green); }
+.score-mid  { background: rgba(253,203,110,.15); color: var(--amber); }
+.score-low  { background: rgba(225,112,85,.15); color: var(--red); }
